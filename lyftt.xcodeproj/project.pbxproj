@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB382035E78D008FBD78 /* AppDelegate.swift */; };
-		B4BBAB3B2035E78D008FBD78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB3A2035E78D008FBD78 /* ViewController.swift */; };
 		B4BBAB3E2035E78D008FBD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3C2035E78D008FBD78 /* Main.storyboard */; };
 		B4BBAB402035E78D008FBD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */; };
 		B4BBAB432035E78D008FBD78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB412035E78D008FBD78 /* LaunchScreen.storyboard */; };
+		B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB502035E8D2008FBD78 /* LoginVC.swift */; };
+		B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB522035E8E6008FBD78 /* signUpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4BBAB352035E78D008FBD78 /* lyftt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyftt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BBAB382035E78D008FBD78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4BBAB3A2035E78D008FBD78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B4BBAB3D2035E78D008FBD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4BBAB422035E78D008FBD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4BBAB442035E78D008FBD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BBAB502035E8D2008FBD78 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		B4BBAB522035E8E6008FBD78 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,63 @@
 		B4BBAB372035E78D008FBD78 /* lyftt */ = {
 			isa = PBXGroup;
 			children = (
+				B4BBAB4F2035E7CE008FBD78 /* Services */,
+				B4BBAB4E2035E7C5008FBD78 /* Utilities */,
+				B4BBAB4D2035E7BD008FBD78 /* Resources */,
+				B4BBAB4C2035E7B6008FBD78 /* Model */,
+				B4BBAB4B2035E7B1008FBD78 /* View */,
+				B4BBAB4A2035E7A7008FBD78 /* Controller */,
 				B4BBAB382035E78D008FBD78 /* AppDelegate.swift */,
-				B4BBAB3A2035E78D008FBD78 /* ViewController.swift */,
 				B4BBAB3C2035E78D008FBD78 /* Main.storyboard */,
 				B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */,
 				B4BBAB412035E78D008FBD78 /* LaunchScreen.storyboard */,
 				B4BBAB442035E78D008FBD78 /* Info.plist */,
 			);
 			path = lyftt;
+			sourceTree = "<group>";
+		};
+		B4BBAB4A2035E7A7008FBD78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4BBAB502035E8D2008FBD78 /* LoginVC.swift */,
+				B4BBAB522035E8E6008FBD78 /* signUpVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4BBAB4B2035E7B1008FBD78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4BBAB4C2035E7B6008FBD78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4BBAB4D2035E7BD008FBD78 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B4BBAB4E2035E7C5008FBD78 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B4BBAB4F2035E7CE008FBD78 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4BBAB3B2035E78D008FBD78 /* ViewController.swift in Sources */,
+				B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */,
+				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
 				B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = lyftt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.lyftt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = lyftt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.lyftt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
