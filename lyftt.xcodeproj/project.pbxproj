@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E752714980A9EAC71A5BEC8 /* Pods_lyftt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */; };
 		B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB382035E78D008FBD78 /* AppDelegate.swift */; };
 		B4BBAB3E2035E78D008FBD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3C2035E78D008FBD78 /* Main.storyboard */; };
 		B4BBAB402035E78D008FBD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85D19DE52F02B925D08AA243 /* Pods-lyftt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BBAB352035E78D008FBD78 /* lyftt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyftt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BBAB382035E78D008FBD78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BBAB3D2035E78D008FBD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		B4BBAB442035E78D008FBD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4BBAB502035E8D2008FBD78 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B4BBAB522035E8E6008FBD78 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.release.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.release.xcconfig"; sourceTree = "<group>"; };
+		E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lyftt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E752714980A9EAC71A5BEC8 /* Pods_lyftt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		771C085CBE06B892FED05CFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85D19DE52F02B925D08AA243 /* Pods-lyftt.debug.xcconfig */,
+				C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B4BBAB2C2035E78D008FBD78 = {
 			isa = PBXGroup;
 			children = (
 				B4BBAB372035E78D008FBD78 /* lyftt */,
 				B4BBAB362035E78D008FBD78 /* Products */,
+				771C085CBE06B892FED05CFC /* Pods */,
+				CBE2A88C42E1202817C62DF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +131,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CBE2A88C42E1202817C62DF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4BBAB472035E78D008FBD78 /* Build configuration list for PBXNativeTarget "lyftt" */;
 			buildPhases = (
+				34C78AF04363150F692FB62A /* [CP] Check Pods Manifest.lock */,
 				B4BBAB312035E78D008FBD78 /* Sources */,
 				B4BBAB322035E78D008FBD78 /* Frameworks */,
 				B4BBAB332035E78D008FBD78 /* Resources */,
+				294A6F00E7D627650293BD20 /* [CP] Embed Pods Frameworks */,
+				31223FA98D9980DC63E5CC78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +208,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		294A6F00E7D627650293BD20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lyftt/Pods-lyftt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lyftt/Pods-lyftt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31223FA98D9980DC63E5CC78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lyftt/Pods-lyftt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34C78AF04363150F692FB62A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lyftt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4BBAB312035E78D008FBD78 /* Sources */ = {
@@ -324,6 +415,7 @@
 		};
 		B4BBAB482035E78D008FBD78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85D19DE52F02B925D08AA243 /* Pods-lyftt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +432,7 @@
 		};
 		B4BBAB492035E78D008FBD78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
