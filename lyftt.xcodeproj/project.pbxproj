@@ -14,6 +14,8 @@
 		B4BBAB432035E78D008FBD78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB412035E78D008FBD78 /* LaunchScreen.storyboard */; };
 		B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB502035E8D2008FBD78 /* LoginVC.swift */; };
 		B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB522035E8E6008FBD78 /* signUpVC.swift */; };
+		B4BBAB552035F49B008FBD78 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB542035F49B008FBD78 /* DataService.swift */; };
+		B4BBAB5B2036096A008FBD78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB5A20360969008FBD78 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B4BBAB442035E78D008FBD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4BBAB502035E8D2008FBD78 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B4BBAB522035E8E6008FBD78 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
+		B4BBAB542035F49B008FBD78 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B4BBAB5A20360969008FBD78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.release.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.release.xcconfig"; sourceTree = "<group>"; };
 		E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lyftt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 				B4BBAB3C2035E78D008FBD78 /* Main.storyboard */,
 				B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */,
 				B4BBAB412035E78D008FBD78 /* LaunchScreen.storyboard */,
+				B4BBAB5A20360969008FBD78 /* GoogleService-Info.plist */,
 				B4BBAB442035E78D008FBD78 /* Info.plist */,
 			);
 			path = lyftt;
@@ -127,6 +132,7 @@
 		B4BBAB4F2035E7CE008FBD78 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B4BBAB542035F49B008FBD78 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4BBAB432035E78D008FBD78 /* LaunchScreen.storyboard in Resources */,
+				B4BBAB5B2036096A008FBD78 /* GoogleService-Info.plist in Resources */,
 				B4BBAB402035E78D008FBD78 /* Assets.xcassets in Resources */,
 				B4BBAB3E2035E78D008FBD78 /* Main.storyboard in Resources */,
 			);
@@ -281,6 +288,7 @@
 				B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */,
 				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
 				B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */,
+				B4BBAB552035F49B008FBD78 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
