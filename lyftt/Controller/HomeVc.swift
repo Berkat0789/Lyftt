@@ -22,9 +22,16 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     var locationAuthStatus = CLLocationManager.authorizationStatus()
     var coordinateRadius: Double = 1000
     var LocationResults: [MKMapItem] = [MKMapItem]()
+    @IBOutlet weak var menuIcon: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuIcon.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        
+        
     tableView.delegate = self
     tableView.dataSource = self
     tableView.isHidden = true
