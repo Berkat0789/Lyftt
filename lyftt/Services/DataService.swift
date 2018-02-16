@@ -13,7 +13,6 @@ enum  accountType {
     case Driver
     case Rider
 }
-
 let firebase_Ref = Database.database().reference()
 
 class DataService {

@@ -16,6 +16,9 @@
 		B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB522035E8E6008FBD78 /* signUpVC.swift */; };
 		B4BBAB552035F49B008FBD78 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB542035F49B008FBD78 /* DataService.swift */; };
 		B4BBAB5B2036096A008FBD78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB5A20360969008FBD78 /* GoogleService-Info.plist */; };
+		B4BBAB5D203620EA008FBD78 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB5C203620EA008FBD78 /* HomeVc.swift */; };
+		B4CEA2D6203666E8008A9867 /* roundedShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA2D5203666E8008A9867 /* roundedShadow.swift */; };
+		B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA2D720366A06008A9867 /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		B4BBAB522035E8E6008FBD78 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		B4BBAB542035F49B008FBD78 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B4BBAB5A20360969008FBD78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4BBAB5C203620EA008FBD78 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
+		B4CEA2D5203666E8008A9867 /* roundedShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadow.swift; sourceTree = "<group>"; };
+		B4CEA2D720366A06008A9867 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.release.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.release.xcconfig"; sourceTree = "<group>"; };
 		E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lyftt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +103,7 @@
 			children = (
 				B4BBAB502035E8D2008FBD78 /* LoginVC.swift */,
 				B4BBAB522035E8E6008FBD78 /* signUpVC.swift */,
+				B4BBAB5C203620EA008FBD78 /* HomeVc.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +111,8 @@
 		B4BBAB4B2035E7B1008FBD78 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4CEA2D5203666E8008A9867 /* roundedShadow.swift */,
+				B4CEA2D720366A06008A9867 /* LocationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,8 +235,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-lyftt/Pods-lyftt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -235,8 +242,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -286,7 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */,
+				B4CEA2D6203666E8008A9867 /* roundedShadow.swift in Sources */,
+				B4BBAB5D203620EA008FBD78 /* HomeVc.swift in Sources */,
 				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
+				B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */,
 				B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */,
 				B4BBAB552035F49B008FBD78 /* DataService.swift in Sources */,
 			);

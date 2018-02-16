@@ -15,7 +15,9 @@ class signUpVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var segmantedView: UISegmentedControl!
     
-//Var and Arrays    
+//Var and Arrays
+    var accType = accountType.Driver
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,33 +27,35 @@ class signUpVC: UIViewController {
         guard let email = emailField.text, emailField.text != "" else {return}
         guard let password = passwordField.text, passwordField.text != "" else {return}
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            
-            if error != nil {
-                guard let errorCode = AuthErrorCode(rawValue: error!._code) else {return}
-                switch errorCode {
-                case .appNotAuthorized:
-                    print("app not Authorized")
-                case .emailAlreadyInUse:
-                    print("email already in use")
-                default:
-                    print("Error Registering User")
-                }// end switch
-                
-            } else { //error is nil
-                
-                if self.segmantedView.selectedSegmentIndex == 0 {
-                    let userData = ["providerID" : (user?.providerID)!, "email": email]
-                    DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: userData, isDriver: false)
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                if error != nil {
+                    guard let errorCode = AuthErrorCode(rawValue: error!._code) else {return}
+                    switch errorCode {
+                    case .invalidEmail:
+                        print("invalid Email")
+                    case .wrongPassword:
+                        print("INcorrect Password")
+                    default:
+                        print("Register Failed")
+                    }
+                    
                 } else {
-                    let DriverData = ["providerID" : (user?.providerID)!, "email": email, "isDriverModeEnabled" : false, "userisDriver": true, "userOnTrip": false] as [String: Any]
-                    DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: DriverData, isDriver: true)
+                    if self.segmantedView.selectedSegmentIndex == 0 {
+                        let userData = ["prividerID": (user?.providerID)!, "email": (user?.email)!] as [String: Any]
+                        DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: userData, isDriver: false)
+                        let homevc = self.storyboard?.instantiateViewController(withIdentifier: "homeVC")
+                        self.present(homevc!, animated: true, completion: nil)
+                        print("User Registered")
+                    } else {
+                        let DriverData = ["prividerID" : (user?.providerID)!, "email" :(user?.email)!, "isDrivermodeEnabled": false, "isDriver" :true, "isDriverOnTrip": false] as [String : Any]
+                        DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: DriverData, isDriver: true)
+                        let homevc = self.storyboard?.instantiateViewController(withIdentifier: "homeVC")
+                        self.present(homevc!, animated: true, completion: nil)
+                        print("Driver Registered")
+                    }
+                    
                 }
-                
-            }
-            print("User Registered")
-        }//--End Auth
-        
+            })
        
     }//end signupPressed
     
