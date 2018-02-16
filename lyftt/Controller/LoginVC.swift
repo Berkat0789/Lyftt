@@ -44,7 +44,8 @@ class LoginVC: UIViewController {
                 }
             }else {
                 print("user Logged in")
-                //Segue to Home
+                let revealvC = self.storyboard?.instantiateViewController(withIdentifier: "revealVC")
+                self.present(revealvC!, animated: true, completion: nil)
                 return
             }
         }//end auth

@@ -113,6 +113,7 @@
 		B4BBAB4A2035E7A7008FBD78 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B45829AC2037714F00F26F98 /* hamburgerVC.swift */,
 				B4BBAB502035E8D2008FBD78 /* LoginVC.swift */,
 				B4BBAB522035E8E6008FBD78 /* signUpVC.swift */,
 				B4BBAB5C203620EA008FBD78 /* HomeVc.swift */,
@@ -127,7 +128,6 @@
 				B4CEA2D720366A06008A9867 /* LocationCell.swift */,
 				B437432520370FAD00075BF6 /* driverAnnotation.swift */,
 				B43743272037133600075BF6 /* roundedImage.swift */,
-				B45829AC2037714F00F26F98 /* hamburgerVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

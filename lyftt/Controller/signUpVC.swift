@@ -43,8 +43,8 @@ class signUpVC: UIViewController {
                     if self.segmantedView.selectedSegmentIndex == 0 {
                         let userData = ["prividerID": (user?.providerID)!, "email": (user?.email)!] as [String: Any]
                         DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: userData, isDriver: false)
-                        let homevc = self.storyboard?.instantiateViewController(withIdentifier: "homeVC")
-                        self.present(homevc!, animated: true, completion: nil)
+                        let revealvC = self.storyboard?.instantiateViewController(withIdentifier: "revealVC")
+                        self.present(revealvC!, animated: true, completion: nil)
                         print("User Registered")
                     } else {
                         let DriverData = ["prividerID" : (user?.providerID)!, "email" :(user?.email)!, "isDrivermodeEnabled": false, "isDriver" :true, "isDriverOnTrip": false] as [String : Any]
