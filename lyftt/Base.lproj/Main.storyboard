@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ykf-B5-VQg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Sign UpVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="signUpVC" customModule="lyftt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpVC" id="BYZ-38-t0r" customClass="signUpVC" customModule="lyftt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,12 +327,21 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="nQh-JU-C1z" customClass="roundedImage" customModule="lyftt" customModuleProvider="target">
+                                        <rect key="frame" x="327" y="15" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0el-qb-OOX"/>
+                                            <constraint firstAttribute="width" constant="40" id="1g2-D3-fIK"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99947911500930786" green="0.27597245573997498" blue="0.19044831395149231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="nQh-JU-C1z" firstAttribute="top" secondItem="Fr4-pi-wBH" secondAttribute="top" constant="15" id="WCJ-WZ-fgF"/>
                                     <constraint firstItem="va6-nU-mMv" firstAttribute="centerX" secondItem="Fr4-pi-wBH" secondAttribute="centerX" id="Wue-4y-h59"/>
                                     <constraint firstItem="va6-nU-mMv" firstAttribute="centerY" secondItem="Fr4-pi-wBH" secondAttribute="centerY" id="dps-Wa-LEP"/>
                                     <constraint firstAttribute="height" constant="70" id="hVv-6R-1xu"/>
+                                    <constraint firstAttribute="trailing" secondItem="nQh-JU-C1z" secondAttribute="trailing" constant="8" id="tho-zA-U70"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQc-LB-uY5">
@@ -491,6 +500,7 @@
         <image name="Back_btn" width="32" height="28"/>
         <image name="loctaion_btn" width="200" height="200"/>
         <image name="login_btn" width="320" height="51"/>
+        <image name="profile" width="400" height="400"/>
         <image name="signIn_FB" width="320" height="50"/>
         <image name="signinGoogle" width="320" height="50"/>
         <image name="signin_btn" width="320" height="51"/>

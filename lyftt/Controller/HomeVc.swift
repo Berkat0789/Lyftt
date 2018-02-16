@@ -28,6 +28,7 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     tableView.delegate = self
     tableView.dataSource = self
     tableView.isHidden = true
+    mapView.delegate = self
     destinationField.delegate = self
     currentLocationField.delegate = self
     }//--End view did load
@@ -41,6 +42,23 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
 //--Protocol functions
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         getUserCurrentLocation()
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotation = annotation as? driverAnnotation
+        let identifier = "driverAnnotation"
+        let view : MKAnnotationView
+        view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        let image = UIImage(named: "Userpic")
+        view.image = image
+        return view
+    }
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        UpdateLocationService.instance.updateDriverLocaton(forCoordinate: userLocation.coordinate) { (Success) in
+            //
+        }
+        UpdateLocationService.instance.updateUserLocation(forCoordinate: userLocation.coordinate) { (Success) in
+            //
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -65,6 +83,7 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         LocationResults = []
         self.tableView.reloadData()
+        self.tableView.isHidden = true
         getUserCurrentLocation()
         return true
     }

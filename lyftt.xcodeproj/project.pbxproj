@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E752714980A9EAC71A5BEC8 /* Pods_lyftt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */; };
+		B437432620370FAD00075BF6 /* driverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B437432520370FAD00075BF6 /* driverAnnotation.swift */; };
+		B43743282037133600075BF6 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43743272037133600075BF6 /* roundedImage.swift */; };
+		B45829A72037639200F26F98 /* updateLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45829A62037639200F26F98 /* updateLocationService.swift */; };
 		B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB382035E78D008FBD78 /* AppDelegate.swift */; };
 		B4BBAB3E2035E78D008FBD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3C2035E78D008FBD78 /* Main.storyboard */; };
 		B4BBAB402035E78D008FBD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		85D19DE52F02B925D08AA243 /* Pods-lyftt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.debug.xcconfig"; sourceTree = "<group>"; };
+		B437432520370FAD00075BF6 /* driverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverAnnotation.swift; sourceTree = "<group>"; };
+		B43743272037133600075BF6 /* roundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
+		B45829A62037639200F26F98 /* updateLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateLocationService.swift; sourceTree = "<group>"; };
 		B4BBAB352035E78D008FBD78 /* lyftt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyftt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BBAB382035E78D008FBD78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BBAB3D2035E78D008FBD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 			children = (
 				B4CEA2D5203666E8008A9867 /* roundedShadow.swift */,
 				B4CEA2D720366A06008A9867 /* LocationCell.swift */,
+				B437432520370FAD00075BF6 /* driverAnnotation.swift */,
+				B43743272037133600075BF6 /* roundedImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B4BBAB542035F49B008FBD78 /* DataService.swift */,
+				B45829A62037639200F26F98 /* updateLocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -290,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43743282037133600075BF6 /* roundedImage.swift in Sources */,
 				B4BBAB532035E8E6008FBD78 /* signUpVC.swift in Sources */,
+				B437432620370FAD00075BF6 /* driverAnnotation.swift in Sources */,
 				B4CEA2D6203666E8008A9867 /* roundedShadow.swift in Sources */,
 				B4BBAB5D203620EA008FBD78 /* HomeVc.swift in Sources */,
 				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
 				B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */,
+				B45829A72037639200F26F98 /* updateLocationService.swift in Sources */,
 				B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */,
 				B4BBAB552035F49B008FBD78 /* DataService.swift in Sources */,
 			);
