@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E752714980A9EAC71A5BEC8 /* Pods_lyftt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */; };
+		5E752714980A9EAC71A5BEC8 /* Pods_lyftt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B437432620370FAD00075BF6 /* driverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B437432520370FAD00075BF6 /* driverAnnotation.swift */; };
 		B43743282037133600075BF6 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43743272037133600075BF6 /* roundedImage.swift */; };
 		B45829A72037639200F26F98 /* updateLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45829A62037639200F26F98 /* updateLocationService.swift */; };
@@ -24,6 +24,7 @@
 		B4BBAB5D203620EA008FBD78 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB5C203620EA008FBD78 /* HomeVc.swift */; };
 		B4CEA2D6203666E8008A9867 /* roundedShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA2D5203666E8008A9867 /* roundedShadow.swift */; };
 		B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA2D720366A06008A9867 /* LocationCell.swift */; };
+		B4E3F9942038E30700F0A7EB /* passangerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3F9932038E30700F0A7EB /* passangerAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B4BBAB5C203620EA008FBD78 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
 		B4CEA2D5203666E8008A9867 /* roundedShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadow.swift; sourceTree = "<group>"; };
 		B4CEA2D720366A06008A9867 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		B4E3F9932038E30700F0A7EB /* passangerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passangerAnnotation.swift; sourceTree = "<group>"; };
 		C2445C087478560811DF4FC5 /* Pods-lyftt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lyftt.release.xcconfig"; path = "Pods/Target Support Files/Pods-lyftt/Pods-lyftt.release.xcconfig"; sourceTree = "<group>"; };
 		E2BB74B0C7F81CC3A92AD602 /* Pods_lyftt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lyftt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				B4CEA2D720366A06008A9867 /* LocationCell.swift */,
 				B437432520370FAD00075BF6 /* driverAnnotation.swift */,
 				B43743272037133600075BF6 /* roundedImage.swift */,
+				B4E3F9932038E30700F0A7EB /* passangerAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
 				B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */,
 				B45829A72037639200F26F98 /* updateLocationService.swift in Sources */,
+				B4E3F9942038E30700F0A7EB /* passangerAnnotation.swift in Sources */,
 				B45829AB20376B6D00F26F98 /* SWRevealViewController.m in Sources */,
 				B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */,
 				B45829AD2037714F00F26F98 /* hamburgerVC.swift in Sources */,
@@ -462,6 +466,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = lyftt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -471,6 +478,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = YES;
 			};
 			name = Debug;
 		};
@@ -482,6 +490,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = lyftt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -490,6 +501,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "lyftt/Resources/lyftt-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = YES;
 			};
 			name = Release;
 		};

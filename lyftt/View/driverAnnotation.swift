@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class driverAnnotation: NSObject, MKAnnotation {
-    var coordinate: CLLocationCoordinate2D
+    dynamic var coordinate: CLLocationCoordinate2D
     var userID: String!
     
     init(coordinate: CLLocationCoordinate2D, ID: String) {

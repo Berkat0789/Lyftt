@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
 //--Outlets
@@ -26,18 +27,32 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         menuIcon.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        
-        
     tableView.delegate = self
     tableView.dataSource = self
     tableView.isHidden = true
     mapView.delegate = self
     destinationField.delegate = self
     currentLocationField.delegate = self
+        
+        DataService.instance.FB_Reference_Drivers.observeSingleEvent(of: .value) { (driverSnapshot) in
+            DataService.instance.getDriversAnnotations(completed: { (driversAnnotation) in
+                guard let driverSnapshot = driverSnapshot.children.allObjects as? [DataSnapshot] else {return}
+                for drivers in driverSnapshot {
+                    if drivers.childSnapshot(forPath: "isDrivermodeEnabled").value as! Bool == true {
+                        for annotation in self.mapView.annotations {
+                            self.mapView.removeAnnotation(annotation)
+                        }
+                    }
+                }
+            })
+        }//end observe driver
+     
+        
+        
+        
     }//--End view did load
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +66,21 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         getUserCurrentLocation()
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotation = annotation as? driverAnnotation
+        if let annotation = annotation as? driverAnnotation {
         let identifier = "driverAnnotation"
         let view : MKAnnotationView
         view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        let image = UIImage(named: "Userpic")
+        let image = UIImage(named: "car")
         view.image = image
         return view
+        } else if let riderannotation = annotation as? passangerAnnotaiton {
+            let identifier = "passanger"
+            var view = MKAnnotationView()
+            view = MKAnnotationView(annotation: riderannotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "Userpic")
+            return view
+        }
+        return nil
     }
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         UpdateLocationService.instance.updateDriverLocaton(forCoordinate: userLocation.coordinate) { (Success) in
@@ -79,6 +102,18 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         cell.updateCell(locationName: location.name!, LocationAddress: location.placemark.title!)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let passangerCoordinate = locationManager.location?.coordinate else {return}
+        let passangerAnnotation = passangerAnnotaiton(Coordinate: passangerCoordinate, userID: (Auth.auth().currentUser?.uid)!)
+        mapView.addAnnotation(passangerAnnotation)
+        let selectedLocation = LocationResults[indexPath.row]
+        destinationField.text = selectedLocation.placemark.title
+        DataService.instance.FB_Reference_Users.child((Auth.auth().currentUser?.uid)!).updateChildValues(["destination" : [selectedLocation.placemark.coordinate.latitude, selectedLocation.placemark.coordinate.longitude]])
+        self.tableView.isHidden = true
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == destinationField {
             self.tableView.isHidden = false
@@ -89,16 +124,15 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         LocationResults = []
-        self.tableView.reloadData()
-        self.tableView.isHidden = true
+        tableView.reloadData()
         getUserCurrentLocation()
         return true
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == destinationField {
+            self.view.endEditing(true)
             performSearch()
         }
-        self.view.endEditing(true)
         return true
     }
     

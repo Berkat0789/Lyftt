@@ -15,9 +15,7 @@ class signUpVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var segmantedView: UISegmentedControl!
     
-//Var and Arrays
-    var accType = accountType.Driver
-    
+//Var and Arrays    
     override func viewDidLoad() {
         super.viewDidLoad()
 

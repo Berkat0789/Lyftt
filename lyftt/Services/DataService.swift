@@ -8,11 +8,8 @@
 
 import Foundation
 import Firebase
+import MapKit
 
-enum  accountType {
-    case Driver
-    case Rider
-}
 let firebase_Ref = Database.database().reference()
 
 class DataService {
@@ -34,6 +31,28 @@ class DataService {
         }
         
     }//end create  user
+
+    //-- Get all udrivers annotation
+    
+    func getDriversAnnotations(completed: @escaping (_ annotation: MKAnnotation) ->()) {
+        var AllDriversAnnotaiton: MKAnnotation!
+        
+        DataService.instance.FB_Reference_Drivers.observeSingleEvent(of: .value) { (driverSnapShot) in
+            guard let driverSnapShot = driverSnapShot.children.allObjects as? [DataSnapshot] else {return}
+            for allDrivers in driverSnapShot {
+                if allDrivers.hasChild("isDriver") {
+                    if allDrivers.hasChild("coordinate") {
+                        guard let driverDict = allDrivers.value as? Dictionary <String, Any> else {return}
+                        let coordinateArray = driverDict["coordinate"] as! NSArray
+                        let driversCoordinate = CLLocationCoordinate2D(latitude: coordinateArray[0] as! CLLocationDegrees, longitude: coordinateArray[1] as! CLLocationDegrees)
+                        let driverAnn = driverAnnotation(coordinate: driversCoordinate, ID: allDrivers.key)
+                        AllDriversAnnotaiton = driverAnn
+                    }
+                }
+            }//end loop
+            completed(AllDriversAnnotaiton)
+        }//end observe
+    }//end get drivers annotaitons
     
     
 }

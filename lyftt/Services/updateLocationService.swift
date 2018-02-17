@@ -41,7 +41,4 @@ class UpdateLocationService {
             locationUpdated(true)
         }//end observe
     }//end update driver
-    
-    
-    
 }//end clsee

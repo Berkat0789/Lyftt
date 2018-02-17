@@ -68,8 +68,8 @@ class hamburgerVC: UIViewController {
                 do {
                     try Auth.auth().signOut()
                     self.logoutButton.setTitle("login/Signup", for: .normal)
-                    let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
-                    self.present(LoginVC!, animated: true, completion: nil)
+                    let signupVC = self.storyboard?.instantiateViewController(withIdentifier: "signUpVC")
+                    self.present(signupVC!, animated: true, completion: nil)
                 }catch let error as NSError {
                     print(error)
                 }
