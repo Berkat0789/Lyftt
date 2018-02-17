@@ -14,14 +14,33 @@ class hamburgerVC: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var driverSwitch: UISwitch!
     @IBOutlet weak var driverModeText: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var usertype: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.revealViewController().rearViewRevealWidth = self.view.frame.width - 40
 
     }//--End view did load
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        observeDriverandRider()
+        driverSwitch.isOn = false
+        driverSwitch.isHidden = true
+        driverModeText.isHidden = true
+        
+        if Auth.auth().currentUser == nil {
+            logoutButton.setTitle("Login or Create Account", for: .normal)
+            userEmail.text = ""
+            usertype.text = ""
+        } else {
+            userEmail.text = Auth.auth().currentUser?.email
+            logoutButton.setTitle("Logout", for: .normal)
+            usertype.text = ""
+        }
+    }//--End view will appear
     
 //Actions
     @IBAction func driverSwitch(_ sender: Any) {
@@ -60,5 +79,26 @@ class hamburgerVC: UIViewController {
         }
         
     }//end logout pressed
+    
+//--View Functions
+    func observeDriverandRider() {
+    //--Observe Driver
+        DataService.instance.FB_Reference_Drivers.observeSingleEvent(of: .value) { (driverSnap) in
+           guard let driverSnap = driverSnap.children.allObjects as? [DataSnapshot] else {return}
+            
+            for driver in driverSnap {
+                let switchMode = driver.childSnapshot(forPath: "isDrivermodeEnabled").value as! Bool
+                if driver.key == Auth.auth().currentUser?.uid {
+                    self.usertype.text = "Driver"
+                    self.driverSwitch.isOn = switchMode
+                    self.driverSwitch.isHidden = false
+                    self.driverModeText.isHidden = false
+                }
+            }
+        }//--End Observe
+    }//end observe driver and Rider
+    
+   //observe Rider
+    
     
 }
