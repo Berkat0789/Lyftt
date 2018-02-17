@@ -96,9 +96,20 @@ class hamburgerVC: UIViewController {
                 }
             }
         }//--End Observe
+//observe Rider
+        DataService.instance.FB_Reference_Users.observeSingleEvent(of: .value) { (userDataSnap) in
+            guard let userDataSnap = userDataSnap.children.allObjects as? [DataSnapshot] else {return}
+            
+            for rider in userDataSnap {
+                if rider.key == Auth.auth().currentUser?.uid {
+                    self.usertype.text = "Rider"
+                }
+            }
+        }//end observe rider
+
     }//end observe driver and Rider
     
-   //observe Rider
+    
     
     
 }
