@@ -23,7 +23,8 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     var locationAuthStatus = CLLocationManager.authorizationStatus()
     var coordinateRadius: Double = 1000
     var LocationResults: [MKMapItem] = [MKMapItem]()
-    var destinationPlacemark: MKPlacemark? = nil
+    var destinationPlacemark: MKPlacemark!
+    var route: MKRoute!
 
     @IBOutlet weak var menuIcon: UIButton!
     
@@ -118,6 +119,7 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         destinationField.text = selectedLocation.placemark.title
         DataService.instance.FB_Reference_Users.child((Auth.auth().currentUser?.uid)!).updateChildValues(["destination" : [selectedLocation.placemark.coordinate.latitude, selectedLocation.placemark.coordinate.longitude]])
         dropPin(placeMark: selectedLocation.placemark)
+        getPolylineForDirectin(forMapitem: selectedLocation)
         self.tableView.isHidden = true
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -143,6 +145,12 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             performSearch()
         }
         return true
+    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let lineRenderer = MKPolylineRenderer(overlay: self.route.polyline)
+        lineRenderer.strokeColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        lineRenderer.lineWidth = 3
+        return lineRenderer
     }
     
     
@@ -171,7 +179,7 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.addAnnotation(annotation)
     }
     func performSearch() {
-        LocationResults.removeAll()
+    LocationResults = []
     let searchRequest = MKLocalSearchRequest()
     searchRequest.naturalLanguageQuery = destinationField.text
     searchRequest.region = mapView.region
@@ -179,17 +187,29 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         search.start { (response, error) in
             if error != nil {
                 print(error!.localizedDescription)
-            } else if response?.mapItems.count == 0 {
-                print("No results found")
-            } else {
-                for Mapitems in response!.mapItems {
-                    self.LocationResults.append(Mapitems as MKMapItem)
+            }else {
+                for mapitems in response!.mapItems {
+                    self.LocationResults.append(mapitems as MKMapItem)
                     self.tableView.reloadData()
                 }
             }
         }
-        
-        
+    }
+    func getPolylineForDirectin(forMapitem mapItem: MKMapItem) {
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = MKMapItem.forCurrentLocation()
+        directionRequest.destination = mapItem
+        directionRequest.transportType = MKDirectionsTransportType.automobile
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate { (response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }else {
+                //-- 0 point gets the st best route
+                self.route = response?.routes[0]
+                self.mapView.add(self.route.polyline)
+            }
+        }
     }
 
 func getUserCurrentLocation() {
