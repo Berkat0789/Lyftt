@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="En5-rT-OjA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="En5-rT-OjA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,12 +63,12 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E6-8K-Ecn">
-                                <rect key="frame" x="27" y="389" width="321" height="50"/>
+                                <rect key="frame" x="27" y="409" width="321" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dJq-Z1-bNX"/>
                                 </constraints>
@@ -77,7 +78,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you agree to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfI-hw-67s">
-                                <rect key="frame" x="27" y="457" width="321" height="21"/>
+                                <rect key="frame" x="27" y="477" width="321" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6Is-tv-QVo"/>
                                 </constraints>
@@ -86,7 +87,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xh-qk-Qfb">
-                                <rect key="frame" x="27" y="486" width="321" height="19"/>
+                                <rect key="frame" x="27" y="506" width="321" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="Pri-za-Iau"/>
                                 </constraints>
@@ -96,7 +97,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-FH-K3L">
-                                <rect key="frame" x="27" y="531" width="321" height="19"/>
+                                <rect key="frame" x="27" y="551" width="321" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="rT7-Lu-kDx"/>
                                 </constraints>
@@ -119,10 +120,17 @@
                                 </segments>
                                 <color key="tintColor" red="0.94852453470230103" green="0.24933052062988281" blue="0.19525623321533203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heere is where the error message will go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Krt-ea-3Gz">
+                                <rect key="frame" x="27" y="380" width="321" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="U09-f2-ReN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="0nZ-lI-mEq"/>
+                            <constraint firstItem="8E6-8K-Ecn" firstAttribute="top" secondItem="Krt-ea-3Gz" secondAttribute="bottom" constant="9" id="187-lP-M4x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O01-2N-E1P" secondAttribute="trailing" constant="27" id="2CM-DH-rP8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P8F-FH-K3L" secondAttribute="trailing" constant="27" id="6Jl-Sc-a3I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8E6-8K-Ecn" secondAttribute="trailing" constant="27" id="83u-Je-dgf"/>
@@ -130,6 +138,7 @@
                             <constraint firstItem="8xh-qk-Qfb" firstAttribute="top" secondItem="hfI-hw-67s" secondAttribute="bottom" constant="8" id="CTy-5m-gr4"/>
                             <constraint firstItem="hfI-hw-67s" firstAttribute="top" secondItem="8E6-8K-Ecn" secondAttribute="bottom" constant="18" id="G2P-wS-80V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U09-f2-ReN" secondAttribute="trailing" constant="27" id="Mex-jP-7r1"/>
+                            <constraint firstItem="Krt-ea-3Gz" firstAttribute="leading" secondItem="UnO-mw-NMN" secondAttribute="leading" id="P4n-9D-98L"/>
                             <constraint firstItem="P8F-FH-K3L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="QGI-w3-qoJ"/>
                             <constraint firstItem="AWe-tv-kzB" firstAttribute="top" secondItem="U09-f2-ReN" secondAttribute="bottom" constant="8" id="R1L-Lx-RKR"/>
                             <constraint firstItem="8E6-8K-Ecn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="Sc8-Fr-5Eq"/>
@@ -139,11 +148,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8xh-qk-Qfb" secondAttribute="trailing" constant="27" id="bx5-kC-Rm9"/>
                             <constraint firstItem="AWe-tv-kzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="czz-wS-MKN"/>
                             <constraint firstItem="U09-f2-ReN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="e7F-zc-Rv8"/>
-                            <constraint firstItem="8E6-8K-Ecn" firstAttribute="top" secondItem="O01-2N-E1P" secondAttribute="bottom" constant="20" id="gC5-8Z-bMf"/>
                             <constraint firstItem="O01-2N-E1P" firstAttribute="top" secondItem="C1a-ZV-EKx" secondAttribute="bottom" constant="21" id="isd-rQ-Uen"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C1a-ZV-EKx" secondAttribute="trailing" constant="27" id="jJ9-j2-S52"/>
                             <constraint firstItem="C1a-ZV-EKx" firstAttribute="top" secondItem="AWe-tv-kzB" secondAttribute="bottom" constant="19" id="nah-4R-o9s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AWe-tv-kzB" secondAttribute="trailing" constant="27" id="svB-Uj-B7l"/>
+                            <constraint firstItem="Krt-ea-3Gz" firstAttribute="top" secondItem="O01-2N-E1P" secondAttribute="bottom" constant="11" id="tzb-BN-G92"/>
+                            <constraint firstItem="Krt-ea-3Gz" firstAttribute="trailing" secondItem="UnO-mw-NMN" secondAttribute="trailing" id="ved-Hh-fFf"/>
                             <constraint firstItem="hfI-hw-67s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="y7v-xu-MMx"/>
                             <constraint firstItem="8xh-qk-Qfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="zgy-e0-Mpy"/>
                         </constraints>
@@ -151,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="CZH-fs-fxF" id="vVz-94-agp"/>
+                        <outlet property="errorMessage" destination="Krt-ea-3Gz" id="UqN-mW-YBQ"/>
                         <outlet property="passwordField" destination="UnO-mw-NMN" id="J8B-Cg-4JF"/>
                         <outlet property="segmantedView" destination="C1a-ZV-EKx" id="sSS-kg-FX3"/>
                     </connections>
@@ -196,7 +207,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>

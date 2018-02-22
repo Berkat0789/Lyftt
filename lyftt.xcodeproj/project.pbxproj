@@ -13,6 +13,7 @@
 		B45829A72037639200F26F98 /* updateLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45829A62037639200F26F98 /* updateLocationService.swift */; };
 		B45829AB20376B6D00F26F98 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45829A920376B6C00F26F98 /* SWRevealViewController.m */; };
 		B45829AD2037714F00F26F98 /* hamburgerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45829AC2037714F00F26F98 /* hamburgerVC.swift */; };
+		B48441E9203E476900B0D460 /* destinationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48441E8203E476900B0D460 /* destinationAnnotation.swift */; };
 		B4BBAB392035E78D008FBD78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBAB382035E78D008FBD78 /* AppDelegate.swift */; };
 		B4BBAB3E2035E78D008FBD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3C2035E78D008FBD78 /* Main.storyboard */; };
 		B4BBAB402035E78D008FBD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BBAB3F2035E78D008FBD78 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		B45829A920376B6C00F26F98 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B45829AA20376B6C00F26F98 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		B45829AC2037714F00F26F98 /* hamburgerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hamburgerVC.swift; sourceTree = "<group>"; };
+		B48441E8203E476900B0D460 /* destinationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = destinationAnnotation.swift; sourceTree = "<group>"; };
 		B4BBAB352035E78D008FBD78 /* lyftt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyftt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BBAB382035E78D008FBD78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BBAB3D2035E78D008FBD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B437432520370FAD00075BF6 /* driverAnnotation.swift */,
 				B43743272037133600075BF6 /* roundedImage.swift */,
 				B4E3F9932038E30700F0A7EB /* passangerAnnotation.swift */,
+				B48441E8203E476900B0D460 /* destinationAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				B437432620370FAD00075BF6 /* driverAnnotation.swift in Sources */,
 				B4CEA2D6203666E8008A9867 /* roundedShadow.swift in Sources */,
 				B4BBAB5D203620EA008FBD78 /* HomeVc.swift in Sources */,
+				B48441E9203E476900B0D460 /* destinationAnnotation.swift in Sources */,
 				B4BBAB512035E8D2008FBD78 /* LoginVC.swift in Sources */,
 				B4CEA2D820366A06008A9867 /* LocationCell.swift in Sources */,
 				B45829A72037639200F26F98 /* updateLocationService.swift in Sources */,
@@ -470,7 +474,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = lyftt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.lyftt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,7 +498,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = lyftt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.lyftt;
 				PRODUCT_NAME = "$(TARGET_NAME)";

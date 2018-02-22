@@ -14,10 +14,11 @@ class signUpVC: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var segmantedView: UISegmentedControl!
-    
-//Var and Arrays    
+    @IBOutlet weak var errorMessage: UILabel!
+    //Var and Arrays
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorMessage.isHidden = true
 
     }
 //--Actions
@@ -30,11 +31,14 @@ class signUpVC: UIViewController {
                     guard let errorCode = AuthErrorCode(rawValue: error!._code) else {return}
                     switch errorCode {
                     case .invalidEmail:
-                        print("invalid Email")
-                    case .wrongPassword:
-                        print("INcorrect Password")
+                        self.errorMessage.isHidden = false
+                        self.errorMessage.text = "Invalid Email Address"
+                    case .weakPassword:
+                        self.errorMessage.isHidden = false
+                        self.errorMessage.text = "Weak Password"
                     default:
-                        print("Register Failed")
+                        self.errorMessage.isHidden = false
+                        self.errorMessage.text = "Invalid login credentials"
                     }
                     
                 } else {
@@ -47,8 +51,8 @@ class signUpVC: UIViewController {
                     } else {
                         let DriverData = ["prividerID" : (user?.providerID)!, "email" :(user?.email)!, "isDrivermodeEnabled": false, "isDriver" :true, "isDriverOnTrip": false] as [String : Any]
                         DataService.instance.CreateDBUser(uid: (user?.uid)!, userData: DriverData, isDriver: true)
-                        let homevc = self.storyboard?.instantiateViewController(withIdentifier: "homeVC")
-                        self.present(homevc!, animated: true, completion: nil)
+                        let revealvC = self.storyboard?.instantiateViewController(withIdentifier: "revealVC")
+                        self.present(revealvC!, animated: true, completion: nil)
                         print("Driver Registered")
                     }
                     

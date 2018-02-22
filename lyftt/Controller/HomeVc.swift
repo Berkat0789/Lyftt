@@ -23,6 +23,8 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     var locationAuthStatus = CLLocationManager.authorizationStatus()
     var coordinateRadius: Double = 1000
     var LocationResults: [MKMapItem] = [MKMapItem]()
+    var destinationPlacemark: MKPlacemark? = nil
+
     @IBOutlet weak var menuIcon: UIButton!
     
     override func viewDidLoad() {
@@ -79,6 +81,12 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             view = MKAnnotationView(annotation: riderannotation, reuseIdentifier: identifier)
             view.image = UIImage(named: "Userpic")
             return view
+        } else if let destinationAnnotation = annotation as? destinationAnnotaiton {
+            let identifier = "destination"
+            var view = MKAnnotationView()
+            view = MKAnnotationView(annotation: destinationAnnotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "destinationAnnotation")
+            
         }
         return nil
     }
@@ -109,6 +117,7 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         let selectedLocation = LocationResults[indexPath.row]
         destinationField.text = selectedLocation.placemark.title
         DataService.instance.FB_Reference_Users.child((Auth.auth().currentUser?.uid)!).updateChildValues(["destination" : [selectedLocation.placemark.coordinate.latitude, selectedLocation.placemark.coordinate.longitude]])
+        dropPin(placeMark: selectedLocation.placemark)
         self.tableView.isHidden = true
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -149,6 +158,18 @@ class HomeVc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
 //--Selectors
     
 //--View Functions
+    
+    func dropPin(placeMark: MKPlacemark) {
+        destinationPlacemark = placeMark
+        for annotation in mapView.annotations {
+            if annotation.isKind(of: MKPointAnnotation.self) {
+                mapView.removeAnnotation(annotation)
+            }
+        }
+        let annotation = destinationAnnotaiton(coordinate: placeMark.coordinate, userID: (Auth.auth().currentUser?.uid)!)
+        annotation.coordinate = placeMark.coordinate
+        mapView.addAnnotation(annotation)
+    }
     func performSearch() {
         LocationResults.removeAll()
     let searchRequest = MKLocalSearchRequest()

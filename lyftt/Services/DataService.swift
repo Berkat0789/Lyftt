@@ -36,7 +36,6 @@ class DataService {
     
     func getDriversAnnotations(completed: @escaping (_ annotation: MKAnnotation) ->()) {
         var AllDriversAnnotaiton: MKAnnotation!
-        
         DataService.instance.FB_Reference_Drivers.observeSingleEvent(of: .value) { (driverSnapShot) in
             guard let driverSnapShot = driverSnapShot.children.allObjects as? [DataSnapshot] else {return}
             for allDrivers in driverSnapShot {
